@@ -46,6 +46,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        do {
+//
+//
+//
+//
+//        } catch let error as NSError {
+//
+//            print(error)
+//        }
         setUI()
         
     }
@@ -76,10 +85,15 @@ class ViewController: UIViewController {
     @objc func buttonTap()
     {
         let url = Bundle.main.url(forResource: "TBA - Beatowski", withExtension: "mp3")
+        
+
         do
         {
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: [])
             audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            audioPlayer?.play()
+            guard let audioPlayer = audioPlayer else { return }
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
         }
         
         catch
