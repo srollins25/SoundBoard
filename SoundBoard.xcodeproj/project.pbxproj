@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E26AB9AD21F0258F0018645C /* Vic Grimes - Bond Villains.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E26AB9AC21F0258F0018645C /* Vic Grimes - Bond Villains.mp3 */; };
 		E29D56BD21EC5E2F00E0F7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D56BC21EC5E2F00E0F7C9 /* AppDelegate.swift */; };
 		E29D56BF21EC5E2F00E0F7C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D56BE21EC5E2F00E0F7C9 /* ViewController.swift */; };
 		E29D56C221EC5E2F00E0F7C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29D56C021EC5E2F00E0F7C9 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E26AB9AC21F0258F0018645C /* Vic Grimes - Bond Villains.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Vic Grimes - Bond Villains.mp3"; sourceTree = "<group>"; };
 		E29D56B921EC5E2F00E0F7C9 /* SoundBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29D56BC21EC5E2F00E0F7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E29D56BE21EC5E2F00E0F7C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		E29D56BB21EC5E2F00E0F7C9 /* SoundBoard */ = {
 			isa = PBXGroup;
 			children = (
+				E26AB9AC21F0258F0018645C /* Vic Grimes - Bond Villains.mp3 */,
 				E29D56CE21EC63C800E0F7C9 /* TBA - Beatowski.mp3 */,
 				E29D56BC21EC5E2F00E0F7C9 /* AppDelegate.swift */,
 				E29D56BE21EC5E2F00E0F7C9 /* ViewController.swift */,
@@ -128,6 +131,7 @@
 				E29D56C721EC5E2F00E0F7C9 /* LaunchScreen.storyboard in Resources */,
 				E29D56C421EC5E2F00E0F7C9 /* Assets.xcassets in Resources */,
 				E29D56CF21EC63C800E0F7C9 /* TBA - Beatowski.mp3 in Resources */,
+				E26AB9AD21F0258F0018645C /* Vic Grimes - Bond Villains.mp3 in Resources */,
 				E29D56C221EC5E2F00E0F7C9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

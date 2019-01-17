@@ -17,7 +17,8 @@ class ViewController: UIViewController {
        let button = UIButton(type: .system)
         button.backgroundColor = UIColor.blue
         button.titleLabel?.font = .boldSystemFont(ofSize: 30)
-        button.setTitle("one", for: .normal)
+        button.setTitle("TBA - Beatowski", for: .normal)
+        button.tag = 0
         button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -27,7 +28,8 @@ class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor.green
         button.titleLabel?.font = .boldSystemFont(ofSize: 30)
-        button.setTitle("two", for: .normal)
+        button.setTitle("Vic Grimes - Bond Villains", for: .normal)
+        button.tag = 1
         button.addTarget(self, action: #selector(buttonTap), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
         button.backgroundColor = UIColor.orange
         button.titleLabel?.font = .boldSystemFont(ofSize: 30)
         button.setTitle("stop", for: .normal)
+        button.tag = 2
         button.addTarget(self, action: #selector(buttonStop), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -46,17 +49,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        do {
-//
-//
-//
-//
-//        } catch let error as NSError {
-//
-//            print(error)
-//        }
         setUI()
-        
     }
 
     func setUI()
@@ -67,33 +60,29 @@ class ViewController: UIViewController {
         
         buttonOne.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         buttonOne.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        buttonOne.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        buttonOne.widthAnchor.constraint(equalToConstant: 300).isActive = true
         buttonOne.heightAnchor.constraint(equalToConstant: 150).isActive = true
 
         buttonTwo.centerXAnchor.constraint(equalTo: buttonOne.centerXAnchor).isActive = true
         buttonTwo.centerYAnchor.constraint(equalTo: buttonOne.centerYAnchor, constant: 160).isActive = true
-        buttonTwo.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        buttonTwo.widthAnchor.constraint(equalToConstant: 300).isActive = true
         buttonTwo.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
         buttonThree.centerXAnchor.constraint(equalTo: buttonOne.centerXAnchor).isActive = true
         buttonThree.centerYAnchor.constraint(equalTo: buttonTwo.centerYAnchor, constant: 160).isActive = true
-        buttonThree.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        buttonThree.widthAnchor.constraint(equalToConstant: 300).isActive = true
         buttonThree.heightAnchor.constraint(equalToConstant: 150).isActive = true
-
     }
     
-    @objc func buttonTap()
+    @objc func buttonTap(sender: UIButton)
     {
-        let url = Bundle.main.url(forResource: "TBA - Beatowski", withExtension: "mp3")
-        
-
         do
         {
-            try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: [])
-            audioPlayer = try AVAudioPlayer(contentsOf: url!)
-            guard let audioPlayer = audioPlayer else { return }
-            audioPlayer.prepareToPlay()
-            audioPlayer.play()
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: sender.titleLabel?.text, ofType: "mp3")!))
+            
+            audioPlayer!.prepareToPlay()
+            audioPlayer!.play()
         }
         
         catch
